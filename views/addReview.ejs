@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parentica</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar input {
+            margin-bottom: 15px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        .sidebar nav a {
+            display: block;
+            margin-bottom: 10px;
+            color: #343a40;
+            text-decoration: none;
+        }
+        .sidebar nav a:hover {
+            background-color: #e9ecef;
+            border-radius: 4px;
+            padding-left: 10px;
+        }
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .notifications {
+            display: flex;
+            align-items: center;
+        }
+        .notifications .bell {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        h2 {
+            font-family: 'Georgia', sans-serif;
+            font-size: 2.5rem;
+            color: #002fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #008cff;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <input type="text" placeholder="Search...">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/addReviewsForm">Add a review</a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <button class="toggle-sidebar-btn">☰</button>
+           <h2>Add a Review</h2>
+        </header>
+        <form action="/addReviewsForm" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Review</label>
+            <input type="text" class="form-control" id="description" name="description" required></textarea>
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="image">Image:</label>
+            <input type="file" class="form-control" id="image" placeholder="Enter image URL" name="image" accept="image/*" required><br><br>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+       </form>
+    </div>
+     <script>
+        document.querySelector('.toggle-sidebar-btn').addEventListener('click',function(){
+            document.querySelector('.sidebar').classList.toggle('d-none');
+        });
+    </script>
+  </body>
+</html>
+</body>
+</html>
