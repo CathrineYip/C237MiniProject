@@ -22,7 +22,7 @@ const connection = mysql.createConnection({
     port: 3304,
     database: 'parentica',
 
-    host:'db4free.net',
+    host:'sql.freedb.tech',
     user: 'freedb_cathrineyip',
     password: 'QXv@%H8Zc4RWRuh',
     database: 'freedb_parentica'
