@@ -20,7 +20,12 @@ const connection = mysql.createConnection({
     user: 'root',
     password: '',
     port: 3304,
-    database: 'parentica'
+    database: 'parentica',
+
+    host:'db4free.net',
+    user: 'freedb_cathrineyip',
+    password: 'QXv@%H8Zc4RWRuh',
+    database: 'freedb_parentica'
 });
 
 connection.connect((err) => {
